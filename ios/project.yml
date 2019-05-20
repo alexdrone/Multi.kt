@@ -1,0 +1,14 @@
+name: LibDemo
+options:
+  bundleIdPrefix: io.alexdrone.LibDemo
+targets:
+  LibDemo:
+    type: application
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources: src/
+    dependencies:
+      - framework: ../build/bin/native/debugFramework/Lib.framework
+    settings:
+      base:
+        INFOPLIST_FILE: src/Info.plist
