@@ -1,0 +1,3 @@
+/Users/alexusbergo/Desktop/Multi.kt/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/alexusbergo/Desktop/Multi.kt/src/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alexusbergo/Desktop/Multi.kt/src/cmake-build-debug/CMakeFiles/src.dir

@@ -35,5 +35,11 @@ class ViewController: UIViewController {
 
     let closureValue2 = ExampleKt.provideClosureExample()("bar")
     print("provideClosureExample: \(closureValue2!)")
+
+    let context = EventBusContext(identifier: "default")
+    let observer = context.eventBus.observer(eventIds: ["foo", "bar"]) { id in
+      print("hey")
+      return true
+    }
   }
 }

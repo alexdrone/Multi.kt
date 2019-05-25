@@ -8,6 +8,7 @@ dependencies {
 }
 
 repositories {
+    jcenter()
     mavenCentral()
 }
 

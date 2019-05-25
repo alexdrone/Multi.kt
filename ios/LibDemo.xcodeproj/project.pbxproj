@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A5E6ACB6B2F11F3259A723B6CEBAD47 /* Example.kt in Resources */ = {isa = PBXBuildFile; fileRef = D2C7EEBE0FF3AE6CCFA34812C98C8D70 /* Example.kt */; };
+		32A791C7040AA8C60EACDCE1154E49C0 /* EventBus.kt in Resources */ = {isa = PBXBuildFile; fileRef = 5300C0FAC16FA2B55EC19E81166BBE7A /* EventBus.kt */; };
 		780528CACA53DBC9757F070FE15C475A /* Lib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00E76AB3FE9A55F9C5B4CCBD72D13D90 /* Lib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9614433D34B56D6EB312CDF2FB48D0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C73FDC542FD4CFABEE4A76C076B002 /* AppDelegate.swift */; };
 		C1BA96F89B84E0A347E4A33D95DFA055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB20088813CDE096C502077448A2CEE /* ViewController.swift */; };
@@ -29,9 +31,11 @@
 
 /* Begin PBXFileReference section */
 		00E76AB3FE9A55F9C5B4CCBD72D13D90 /* Lib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lib.framework; path = ../build/bin/native/debugFramework/Lib.framework; sourceTree = "<group>"; };
+		5300C0FAC16FA2B55EC19E81166BBE7A /* EventBus.kt */ = {isa = PBXFileReference; path = EventBus.kt; sourceTree = "<group>"; };
 		55C73FDC542FD4CFABEE4A76C076B002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FB20088813CDE096C502077448A2CEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C9EF7470521947CAE83C0782B9F7A96C /* LibDemo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LibDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2C7EEBE0FF3AE6CCFA34812C98C8D70 /* Example.kt */ = {isa = PBXFileReference; path = Example.kt; sourceTree = "<group>"; };
 		D4BCC58F6BC5F3B20DD5325FFD362BE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,9 +67,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		528EB8B7E954A1119A57AFE4BF8C7F4A /* kotlin */ = {
+			isa = PBXGroup;
+			children = (
+				5300C0FAC16FA2B55EC19E81166BBE7A /* EventBus.kt */,
+				D2C7EEBE0FF3AE6CCFA34812C98C8D70 /* Example.kt */,
+			);
+			name = kotlin;
+			path = ../src/nativeMain/kotlin;
+			sourceTree = "<group>";
+		};
 		A5910058EA98D6D29BD4ED94391D6390 = {
 			isa = PBXGroup;
 			children = (
+				528EB8B7E954A1119A57AFE4BF8C7F4A /* kotlin */,
 				F6359E96AB436BC87E663A4468CAA476 /* src */,
 				00C7B1E3CC00D22D1050F2243BAB1801 /* Frameworks */,
 				2275E34EC5F5479D791B9F26C7C6E89A /* Products */,
@@ -89,7 +104,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87CFA1B07AFE18BB8C2387DD8B939E2F /* Build configuration list for PBXNativeTarget "LibDemo" */;
 			buildPhases = (
+				B0E2EBEFFAB3DE2A8B2301153433C9C5 /* Build Kotlin Lib */,
 				0E44AF0990AF800CB7230988CD381BEA /* Sources */,
+				0CC78430B15DB69EC04E0EA5B6E0A7D0 /* Resources */,
 				76D036DE3305AACCBBAA2229B71653A7 /* Frameworks */,
 				A368314DA151CD1D10B671A2B2DEAA04 /* Embed Frameworks */,
 			);
@@ -125,6 +142,39 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0CC78430B15DB69EC04E0EA5B6E0A7D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32A791C7040AA8C60EACDCE1154E49C0 /* EventBus.kt in Resources */,
+				0A5E6ACB6B2F11F3259A723B6CEBAD47 /* Example.kt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B0E2EBEFFAB3DE2A8B2301153433C9C5 /* Build Kotlin Lib */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Kotlin Lib";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ../ && ./gradlew linkNative";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E44AF0990AF800CB7230988CD381BEA /* Sources */ = {

@@ -6,9 +6,14 @@ targets:
     type: application
     platform: iOS
     deploymentTarget: "11.0"
-    sources: src/
+    sources: 
+      - src/
+      - ../src/nativeMain/kotlin/
     dependencies:
       - framework: ../build/bin/native/debugFramework/Lib.framework
     settings:
       base:
         INFOPLIST_FILE: src/Info.plist
+    preBuildScripts:
+      - script: cd ../ && ./gradlew linkNative
+        name: Build Kotlin Lib

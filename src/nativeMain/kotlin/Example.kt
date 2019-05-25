@@ -16,7 +16,7 @@ class LibClass : LibInteface {
 fun bridgeIntegersExample(b: Byte, s: UShort, i: Int, l: ULong?) {
 }
 
-// Bridge flaots scalars.
+// Bridge floats scalars.
 fun bridgeFloatsExample(f: Float, d: Double?) {
 }
 
